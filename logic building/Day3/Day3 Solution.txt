@@ -1,0 +1,313 @@
+1********************************************************************
+the loop will never execute since while condition is false and hence there will be no output
+
+2*************************************************************
+import java.util.*;
+class MyProg{
+public static void main(String args[])
+{
+	int result=38;
+	if(result>40)
+		System.out.println("Passed");
+}
+}
+
+
+
+
+3*****************************************************
+	9 exclamation marks
+
+
+
+4****************************************************
+for(int number=10;number<15;number++)
+	System.out.println("*");
+
+
+
+
+5*************************************************************8
+	-if number is less than10 it will enter while loop
+		then increment i
+		then get number for j
+		if j==0 the break the while loop
+		else if j==1 the continue below and print i
+		and when loop condition fails it will finally print finished
+6***************************************************************************
+import java.util.*;
+class MyProg{
+public static void main(String args[])
+{
+	int i=6;
+	switch(i){
+		case 10:
+			System.out.println("Congratulations you have full marks");
+			break;
+		case 9:
+			System.out.println("Congratulations you have almost full marks");
+			break;
+		case 8:
+			System.out.println("Congratulations you have done very well");
+			break;
+		case 7:
+			System.out.println("Congratulations you have done well");
+			break;
+		case 6:
+			System.out.println("You are doing alright but could study more");
+			break;
+		case 5:
+			System.out.println("You only got half marks,you need to do more");
+			break;
+		case 4:
+			System.out.println("You got less than half marks,you need to do more");
+			break;
+		case 3:
+			System.out.println("You have got low marks, see a teacher");
+			break;
+		case 2:
+			System.out.println("You have got very low marks,see ateacher");
+			break;
+		case 1:
+			System.out.println("You got 1 mark, see ateacher");
+			break;
+		default:
+			System.out.println("You have failed abysmally");
+}	
+}
+}
+
+7****************************************************
+
+Do while will excute first iteration and get value for i and print it
+for second iteration it will check if value is 0 if yes second iteration will not take place
+if value of i not 0 then again it willl take value of i and print it
+this 3 steps will continue till user enters 0 in get number
+
+
+8************************************************************8
+
+It will print "Hello + name"
+
+
+
+9***************************************************************
+
+import java.util.*;
+class MyProg2{
+public static void main(String args[])
+{
+for(int i=11;i<20;i++)
+	System.out.println(i);
+}}
+
+
+10*****************************************************
+
+Instead of using == we have used = that is assignment operator
+
+
+
+11.*****************************************************************************************************
+import java.util.*;
+class MyProg{
+public static void main(String args[])
+{
+//int n=getnumber();
+//while(n!=0)
+//{
+//	System.out.println(n);
+//	n=getnumber();
+//}
+
+
+int n;
+for(n=getnumber();n!=0;)
+{System.out.println(n);
+n=getnumber();}
+}
+
+
+
+
+
+public static int getnumber()
+{
+	System.out.println("enter number");
+	Scanner sc= new Scanner(System.in);
+	int s= sc.nextInt();
+	return s;
+}
+}
+
+
+
+12********************************************
+If value of i is less than10 or equal to 15 then it will increment and print i
+
+13*************************************************************8
+public class MyProg2{
+
+    public static void main(String[] args) {
+
+        int num = 5;
+        for(int i = 1; i <= 10; ++i)
+        {
+            System.out.printf("%d * %d = %d \n", num, i, num * i);
+        }
+    }
+}
+
+14**************************************
+
+import java.util.*;  
+  
+public class MyProg2{  
+    public static void main(String[] args) {    
+        int fact = 1;  
+        int i = 1;  
+        Scanner sc = new Scanner(System.in);  
+        System.out.println("Enter a number whose factorial is to be found: ");  
+        int num = sc.nextInt();   
+        while( i <= num ){  
+            fact = fact * i;   
+            i++; 
+        }      
+        System.out.println("\nFactorial  " + fact);  
+    }  
+}
+
+15********************************************************8
+import java.util.Scanner;  
+public class MyProg2  
+{  
+public static void main(String args[])  
+{  
+int number, digit, sum = 0;  
+Scanner sc = new Scanner(System.in);  
+System.out.print("Enter the number: ");  
+number = sc.nextInt();  
+	do 
+	{  
+		digit = number % 10;  
+		sum = sum + digit;   
+		number = number / 10;  
+	}while(number > 0);   
+System.out.println("Sum of Digits: "+sum);  
+}  
+}
+
+16*******************
+public class MyProg2{    
+ public static void main(String args[]){    
+  int i,m=0,flag=0;      
+  int n=5;//it is the number to be checked    
+  m=n/2;      
+  if(n==0||n==1){  
+   System.out.println(n+" is not prime number");      
+  }else{  
+   for(i=2;i<=m;i++){      
+    if(n%i==0){      
+     System.out.println(n+" is not prime number");      
+     flag=1;      
+     break;      
+    }      
+   }      
+   if(flag==0)  { System.out.println(n+" is prime number"); }  
+  } 
+}    
+}
+
+
+17*******************************************8
+import java.util.*;
+public class MyProg2{
+    public static void main(String[] args) {
+	Scanner sc= new Scanner(System.in);
+       int month = sc.nextInt();
+        String monthName = "";
+
+        switch (month) {
+            case 1:
+                monthName = "January";
+                break;
+            case 2:
+                monthName = "February";
+                break;
+            case 3:
+                monthName = "March";
+                break;
+            case 4:
+                monthName = "April";
+                break;
+            case 5:
+                monthName = "May";
+                break;
+            case 6:
+                monthName = "June";
+                break;
+            case 7:
+                monthName = "July";
+                break;
+            case 8:
+                monthName = "August";
+                break;
+            case 9:
+                monthName = "September";
+                break;
+            case 10:
+                monthName = "October";
+                break;
+            case 11:
+                monthName = "November";
+                break;
+            case 12:
+                monthName = "December";
+                break;
+            default:
+                System.out.println("Invalid Month!");
+                System.exit(0);
+        }
+
+        System.out.println("Month corresponding to the number " + month + ": " + monthName);
+    }
+}
+ 
+18******************************************************8
+import java.util.*;
+public class MyProg2{
+    public static void main(String[] args) {
+	Scanner sc= new Scanner(System.in);
+	System.out.println("Simple Calculator");
+	System.out.println("-----------------");
+	System.out.println("Enter first number");
+       int n1 = sc.nextInt();
+	System.out.println("Enter second number");
+       int n2 = sc.nextInt();
+   	System.out.println("Choose an operation: \n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\nEnter your choice: ");
+	int choice= sc.nextInt();
+	int result;
+        switch (choice){
+            case 1:
+		result=n1+n2;
+                System.out.println("Result:"+n1+" + "+n2+" = "+result);
+                break;
+	   case 2:
+		result=n1-n2;
+                System.out.println("Result:"+n1+" - "+n2+" = "+result);
+                break;
+	   case 3:
+		result=n1*n2;
+                System.out.println("Result:"+n1+" * "+n2+" = "+result);
+                break;
+	   case 4:
+		result=n1/n2;
+                System.out.println("Result:"+n1+" / "+n2+" = "+result);
+                break;
+	   default:
+                System.out.println("Error: Invalid input");
+                
+    }
+}
+}
+ 
