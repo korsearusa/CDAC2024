@@ -1,0 +1,32 @@
+The org.apache.commons.lang3.ArrayUtils class in Apache Commons Lang library provides various utility methods for working with arrays in Java. Here are some of the commonly used methods:
+
+add(): Adds an element to an array at a specified index.
+
+clone(): Clones an array to produce a shallow copy.
+
+contains(): Checks if an array contains a specific value.
+
+isEmpty(): Checks if an array is empty or null.
+
+isNotEmpty(): Checks if an array is not empty and not null.
+
+indexOf(): Finds the index of a specified value in an array.
+
+isEmpty(): Checks if an array is empty or null.
+
+isNotEmpty(): Checks if an array is not empty and not null.
+
+remove(): Removes an element from an array at a specified index.
+
+reverse(): Reverses the order of elements in an array.
+
+subarray(): Returns a subarray from the original array.
+
+toMap(): Converts an array of objects into a map, using a transformer to generate keys.
+
+These methods provide convenient ways to perform common operations on arrays, making array manipulation tasks easier and more efficient in Java programming.
+
+
+
+
+
