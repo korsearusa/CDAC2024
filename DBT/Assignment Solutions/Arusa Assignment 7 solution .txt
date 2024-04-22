@@ -1,0 +1,99 @@
+
+
+ 1) Write a query that counts all orders for October 3. 
+ 
+ mysql> select count(*) from orders where Odate="1990-10-03";
++----------+
+| count(*) |
++----------+
+|        5 |
++----------+
+1 row in set (0.01 sec)
+
+
+
+
+2) Write a query that counts the number of different non-NULL city values in the 
+Customers table. 
+mysql> select city,count(*)
+    -> from customers
+    -> group by city;
++----------+----------+
+| city     | count(*) |
++----------+----------+
+| London   |        2 |
+| Rome     |        2 |
+| San Jose |        2 |
+| Berlin   |        1 |
++----------+----------+
+4 rows in set (0.01 sec)
+
+3) Write a query that selects each customer’s smallest order. 
+
+mysql> select cname, min(amt)
+    -> from orders, customers
+    -> where orders.cnum=customers.cnum
+    -> group by cname
+    -> ;
++----------+----------+
+| cname    | min(amt) |
++----------+----------+
+| Cisneros |    18.69 |
+| Hoffman  |   767.19 |
+| Pereira  |  1900.10 |
+| Liu      |  5160.45 |
+| Giovanni |  1713.23 |
+| Grass    |    75.75 |
+| Clemens  |  4723.00 |
++----------+----------+
+7 rows in set (0.01 sec)
+
+
+4) Write a query that selects the first customer, in alphabetical order, whose name 
+begins with G. 
+
+mysql> select Cname
+    -> from customers
+    -> where cname like'G%'
+    -> order by cname asc;
++----------+
+| Cname    |
++----------+
+| Giovanni |
+| Grass    |
++----------+
+2 rows in set (0.00 sec)
+
+
+5) Write a query that selects the highest rating in each city. 
+
+mysql> select city,max(rating)
+    -> from customers
+    -> group by city
+    -> ;
++----------+-------------+
+| city     | max(rating) |
++----------+-------------+
+| London   |         100 |
+| Rome     |         200 |
+| San Jose |         300 |
+| Berlin   |         300 |
++----------+-------------+
+4 rows in set (0.00 sec)
+6) Write a query that counts the number of salespeople registering orders for each 
+day. (If a salesperson h
+mysql> select snum,Odate,count(*) from orders group by snum,Odate;
++------+------------+----------+
+| snum | Odate      | count(*) |
++------+------------+----------+
+| 1007 | 1990-10-03 |        2 |
+| 1001 | 1990-10-03 |        1 |
+| 1004 | 1990-10-03 |        1 |
+| 1002 | 1990-10-03 |        1 |
+| 1003 | 1990-10-04 |        1 |
+| 1002 | 1990-10-04 |        1 |
+| 1001 | 1990-10-05 |        1 |
+| 1002 | 1990-10-06 |        1 |
+| 1001 | 1990-10-06 |        1 |
++------+------------+----------+
+9 rows in set (0.00 sec)

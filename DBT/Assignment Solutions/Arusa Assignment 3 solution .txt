@@ -1,0 +1,8 @@
+1) Does ANSI recognize the data type DATE? 
+
+Yes, ANSI SQL recognizes the DATE type, which is used to store dates without any time information. 
+It allows users to store and manipulate date values in database tables and perform operations such as comparisons and calculations based on dates.
+
+2) Which subdivision of SQL is used to insert values in tables? 
+The subdivision of SQL used to insert values into tables is called the Data Manipulation Language (DML). 
+DML commands, such as INSERT, are used to add new records or rows of data into database tables.
