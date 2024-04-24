@@ -1,0 +1,67 @@
+
+
+ 1) Assume there is a table called Multicust, with all of the same column definitions 
+as Salespeople. Write a command that inserts all salespeople with more than one 
+customer into this table. 
+
+INSERT INTO Multicust
+SELECT *
+FROM Salespeople
+WHERE snum IN (SELECT snum FROM Orders GROUP BY snum HAVING COUNT(DISTINCT cnum) > 1);
+
+
+mysql> delete from customers where cnum not in (select distinct cnum from orders);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    300 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+6 rows in set (0.00 sec)
+
+
+2) Write a command that deletes all customers with no current orders. 
+
+mysql> delete from customers where cnum not in (select distinct cnum from orders);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from customers;
++------+----------+----------+--------+------+
+| Cnum | Cname    | City     | Rating | Snum |
++------+----------+----------+--------+------+
+| 2001 | Hoffman  | London   |    100 | 1001 |
+| 2002 | Giovanni | Rome     |    300 | 1003 |
+| 2003 | Liu      | San Jose |    200 | 1002 |
+| 2004 | Grass    | Berlin   |    300 | 1002 |
+| 2008 | Cisneros | San Jose |    300 | 1007 |
+| 2007 | Pereira  | Rome     |    200 | 1004 |
++------+----------+----------+--------+------+
+6 rows in set (0.00 sec)
+
+
+3) Write a command that increases by twenty percent the commissions of all 
+salespeople with total orders above Rs. 3,000. 
+
+mysql> update salespeople set comm=comm+0.20 where snum in (select abcd.snum from (select snum,sum(amt)from orders group by snum having sum(amt)>3000)as abcd);
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from salespeople;
++------+---------+-----------+------+
+| Snum | Sname   | City      | Comm |
++------+---------+-----------+------+
+| 1001 | Peel    | London    | 0.12 |
+| 1100 | Blanco  | San Jose  | NULL |
+| 1004 | Motika  | London    | 0.31 |
+| 1007 | Rifkin  | Barcelona | 0.15 |
+| 1003 | Axelrod | New York  | 0.10 |
+| 1002 | Serres  | San Jose  | 0.13 |
++------+---------+-----------+------+
+6 rows in set (0.00 sec)
